@@ -10,6 +10,10 @@
             <button type="submit">Log-out</button>
         </form>
 
+        <br><a href="{% url 'post_create' %}"><button>
+            New post
+        </button></a>
+
         {% for post in post_list %}
             <a href="{% url 'post_detail' post.pk %}"><h1>{{ post.title }}</h1></a>
             <p>{{ post.body }}</p>
