@@ -7,12 +7,10 @@
 
         <form method="post" action="{% url 'logout' %}">
             {% csrf_token %}
-            <button type="submit">Log-out</button>
+            <button type="submit" class="btn btn-primary">Log-out</button>
         </form>
 
-        <br><a href="{% url 'post_create' %}"><button>
-            New post
-        </button></a>
+        <br><a href="{% url 'post_create' %}" class="btn btn-primary">New post</a>
 
         {% for post in post_list %}
             <a href="{% url 'post_detail' post.pk %}"><h1>{{ post.title }}</h1></a>
@@ -20,7 +18,8 @@
         {% endfor %}
     {% else %}
         <p>You are not logged in</p>
-        <a href="{% url 'login' %}">Log-in</a>
+        <a href="{% url 'signup' %}" class="btn btn-primary">Sign-Up</a>
+        <a href="{% url 'login' %}" class="btn btn-primary">Log-in</a>
     {% endif %}
 
 {% endblock content %}

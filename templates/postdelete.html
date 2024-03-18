@@ -6,6 +6,6 @@
     <form action="" method="post">
         {% csrf_token %}
         <p>Estas seguro de querer eliminar {{ post.title }}?</p>
-        <input type="submit" value="Confirm">
+        <input type="submit" value="Confirm" class="btn btn-primary">
     </form>
 {% endblock content %}
